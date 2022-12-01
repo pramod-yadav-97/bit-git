@@ -89,9 +89,7 @@ if [[ "$git" == "/usr/bin/git" ]] ; then
 #        echo "Installed version is $git_ver"
 else
         echoMessage "Git is not Present. Installing latest version."
-        sudo add-apt-repository ppa:git-core/ppa -y
-        sudo apt-get update
-        sudo apt-get install git -y
+        bash upgrade-git.sh
 	echoSuccess "Git Installed."
 fi
 
@@ -116,8 +114,6 @@ fi
 if [[ "$git_flag" -eq 1 ]] ;then
 
         echoMessage "Upgrading git to latest version."
-        sudo add-apt-repository ppa:git-core/ppa -y
-        sudo apt-get update
-        sudo apt-get install git -y
+        bash upgrade-git.sh
 	echoSuccess "Latest version of Git is Installed."
 fi
