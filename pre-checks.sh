@@ -88,9 +88,8 @@ if [[ "$git" == "/usr/bin/git" ]] ; then
 #        git_ver=$(git --version | cut -d' ' -f3)
 #        echo "Installed version is $git_ver"
 else
-        echoMessage "Git is not Present. Installing latest version."
-        bash upgrade-git.sh
-	echoSuccess "Git Installed."
+        echoError "Install latest supported version.Execute the upgrade-git.sh script first"
+	exit 1
 fi
 
 git_version=$(git version | awk '{ print $3 }')
@@ -113,7 +112,6 @@ fi
 
 if [[ "$git_flag" -eq 1 ]] ;then
 
-        echoMessage "Upgrading git to latest version."
-        bash upgrade-git.sh
-	echoSuccess "Latest version of Git is Installed."
+        echoError "Upgrading git to latest supported version.Run the upgrade-git.sh first"
+        exit 1
 fi

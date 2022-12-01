@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 echo "debug"
 
@@ -20,6 +20,6 @@ make prefix=/usr/local all
 
 sudo make prefix=/usr/local install
 
-# exec bash
+exec bash
 
 git --version

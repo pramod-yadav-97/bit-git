@@ -30,4 +30,6 @@ echoMessage(){
         printf "|     MESSAGE: %5s \n" "$1"
 }
 
+exec bash
 
+echo "echo initiation"
